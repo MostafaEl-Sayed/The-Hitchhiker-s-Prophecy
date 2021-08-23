@@ -42,4 +42,12 @@ extension HomeScenePresneter: HomeScenePresentationLogic {
             displayView?.failedToFetchCharacters(error: error)
         }
     }
+
+    func displayHorizontalLayout() {
+        displayView?.displayHorizontalLayout()
+    }
+
+    func displayVerticalLayout() {
+        displayView?.displayVerticalLayout()
+    }
 }

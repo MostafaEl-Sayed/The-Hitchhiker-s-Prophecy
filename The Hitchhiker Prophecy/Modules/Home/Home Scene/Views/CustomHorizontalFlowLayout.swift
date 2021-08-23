@@ -40,7 +40,6 @@ class CustomHorizontalFlowLayout:  UICollectionViewFlowLayout {
 
         for itemAttributes in attributes! {
             let itemAttributesCopy = itemAttributes.copy() as! UICollectionViewLayoutAttributes
-            changeLayoutAttributes(itemAttributesCopy)
             attributesCopy.append(itemAttributesCopy)
         }
         return attributesCopy

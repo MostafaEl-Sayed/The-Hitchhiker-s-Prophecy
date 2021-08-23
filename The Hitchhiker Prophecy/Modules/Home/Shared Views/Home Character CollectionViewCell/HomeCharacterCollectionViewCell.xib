@@ -18,10 +18,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vz6-UY-YKi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="551.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="548"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-cf-toV">
-                        <rect key="frame" x="16" y="559.5" width="361" height="26.5"/>
+                        <rect key="frame" x="16" y="556" width="361" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="2IF-q0-emE"/>
+                        </constraints>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>

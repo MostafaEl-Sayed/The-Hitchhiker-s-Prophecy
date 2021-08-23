@@ -14,6 +14,8 @@ protocol HomeSceneDisplayView: class {
     
     func didFetchCharacters(viewModel: [HomeScene.Search.ViewModel])
     func failedToFetchCharacters(error: Error)
+    func displayHorizontalLayout()
+    func displayVerticalLayout()
 }
 
 protocol HomeSceneBusinessLogic: class {
@@ -21,12 +23,15 @@ protocol HomeSceneBusinessLogic: class {
     var presenter: HomeScenePresentationLogic { get }
 
     func fetchCharacters()
+    func changeLayoutButtonTapped()
 }
 
 protocol HomeScenePresentationLogic: class {
     var displayView: HomeSceneDisplayView? { get }
 
     func presentCharacters(_ response: HomeScene.Search.Response)
+    func displayHorizontalLayout()
+    func displayVerticalLayout()
 }
 
 protocol HomeSceneDataStore: class {

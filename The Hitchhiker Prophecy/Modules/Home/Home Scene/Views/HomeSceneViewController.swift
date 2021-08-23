@@ -33,26 +33,45 @@ class HomeSceneViewController: UIViewController {
     private func setupCollectionView() {
         let layout =  CustomHorizontalFlowLayout()
         collectionView.collectionViewLayout = layout
+        collectionView.delegate = nil
         let identifier = HomeCharacterCollectionViewCell.className
         let characterCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(characterCell, forCellWithReuseIdentifier: identifier)
         
     }
+
+    // MARK: - @IBActions
+    @IBAction private func changeLayoutButtonTapped(_ sender: Any) {
+        interactor?.changeLayoutButtonTapped()
+    }
     
 }
 
 extension HomeSceneViewController: HomeSceneDisplayView {
+
     func didFetchCharacters(viewModel: [HomeScene.Search.ViewModel]) {
         // TODO: Implement
         self.viewModel = viewModel
-//        let layout = UICollectionViewFlowLayout()
-//        collectionView.collectionViewLayout.invalidateLayout()
-//        collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.reloadData()
     }
     
     func failedToFetchCharacters(error: Error) {
         // TODO: Implement
+    }
+
+    func displayHorizontalLayout() {
+        let layout = CustomHorizontalFlowLayout()
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.reloadData()
+    }
+    
+    func displayVerticalLayout() {
+        let layout = CustomVerticalFlowLayout()
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.reloadData()
     }
 }
 
