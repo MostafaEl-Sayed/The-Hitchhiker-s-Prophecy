@@ -11,9 +11,6 @@ import UIKit
 
 class CustomHorizontalFlowLayout:  UICollectionViewFlowLayout {
 
-    var standardItemAlpha: CGFloat = 0.7
-    var standardItemScale: CGFloat = 0.5
-
     var isSetup = false
 
     override func prepare() {
@@ -25,13 +22,12 @@ class CustomHorizontalFlowLayout:  UICollectionViewFlowLayout {
     }
 
     func setupCollectionView() {
+        guard  let collectionSize = collectionView?.bounds.size else { return }
+        let imageCutSize: CGFloat = 40
         scrollDirection = .horizontal
-        // after scaling all cells will have a 1-standardItemScale spaces between cells
-        self.itemSize = CGSize(width: 400.0 * standardItemScale, height: 600.0 * standardItemScale)
-        minimumLineSpacing = -itemSize.width*(1-standardItemScale)
-        //To center contet in middle of collectionview
-        guard let collectionView = collectionView else { return }
-        let collectionSize = collectionView.bounds.size
+        
+        self.itemSize = CGSize(width: collectionSize.width - imageCutSize, height: collectionSize.height * 0.8)
+        
         // 80 refers to save area height
         let yInset = (collectionSize.height - self.itemSize.height - 80 ) / 2
         let xInset = (collectionSize.width - self.itemSize.width ) / 2
@@ -53,26 +49,6 @@ class CustomHorizontalFlowLayout:  UICollectionViewFlowLayout {
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-
-
-    func changeLayoutAttributes(_ attributes: UICollectionViewLayoutAttributes) {
-        let collectionCenter = collectionView!.frame.size.width/2
-        let contentOffset = collectionView!.contentOffset
-        let normalizedCenter = attributes.center.x - contentOffset.x
-
-        let maxDistance = self.itemSize.width + self.minimumLineSpacing
-        let distance = min(abs(collectionCenter - normalizedCenter), maxDistance)
-        let ratio = (maxDistance - distance)/maxDistance
-
-        let alpha = ratio * (1 - self.standardItemAlpha) + self.standardItemAlpha
-        let scale = ratio * (1 - self.standardItemScale) + self.standardItemScale
-
-        attributes.alpha = alpha
-        attributes.transform = CGAffineTransform(scaleX: scale, y: scale)
-        attributes.zIndex = Int(alpha * 10)
-
-    }
-
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         print(proposedContentOffset)
