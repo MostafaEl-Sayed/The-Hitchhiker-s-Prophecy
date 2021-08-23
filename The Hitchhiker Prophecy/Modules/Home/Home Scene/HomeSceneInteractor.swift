@@ -22,10 +22,15 @@ class HomeSceneInteractor: HomeSceneDataStore {
 }
 
 extension HomeSceneInteractor: HomeSceneBusinessLogic {
+    
     func fetchCharacters() {
         
         let ts = "1"
-        let hash = "" // TODO: Implement
+        /// hash - a md5 digest of the ts parameter, your private key and your public key (e.g. md5(ts+privateKey+publicKey)
+        ///
+        /// you can use online generator for the hash
+        ///    - https://cryptii.com/pipes/md5-hash
+        let hash = "68f7ac1ec92ad890763e6d7934094afe" // TODO: Implement
         let limit = HomeScene.Search.Constants.searchPageLimit
         let offset = result?.offset ?? 0
         let input = Characters.Search.Input(timeStamp: ts, apiKey: NetworkConstants.publicKey, hash: hash, offset: offset, limit: limit, orderBy: .modifiedDateDescending)

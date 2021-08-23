@@ -51,6 +51,7 @@ extension Characters.Search {
         var results: [Character]
     }
 }
+
 // MARK: - Character
 extension Characters.Search {
     struct Character: Codable {
