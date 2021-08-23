@@ -9,6 +9,7 @@
 //
 
 final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
+    
     // MARK: - Stored properties
     let character: Characters.Search.Character
     let presenter: CharacterDetailsScenePresentationLogic

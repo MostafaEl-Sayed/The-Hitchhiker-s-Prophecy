@@ -8,18 +8,26 @@
 
 import UIKit
 
+protocol HomeCharacterCollectionView {
+    func configure(with viewModel: HomeScene.Search.ViewModel)
+}
+
 class HomeCharacterCollectionViewCell: UICollectionViewCell {
+
     // MARK: - Outlets
-    @IBOutlet private weak var characterNameLabel: UILabel!
-    @IBOutlet private weak var characterImageView: UIImageView!
-    
+    @IBOutlet  weak var characterNameLabel: UILabel!
+    @IBOutlet  weak var characterImageView: UIImageView!
+
     // MARK: - Life Cycle
     override func awakeFromNib() {
         characterImageView.layer.cornerRadius = 8
         characterImageView.clipsToBounds = true
     }
-    
-    // MARK: - Setup
+
+}
+
+// MARK: - HomeCharacterCollectionView
+extension HomeCharacterCollectionViewCell: HomeCharacterCollectionView {
     func configure(with viewModel: HomeScene.Search.ViewModel) {
         characterNameLabel.text = viewModel.name
         if let url = URL(string: viewModel.imageUrl) {

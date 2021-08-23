@@ -19,13 +19,13 @@ protocol HomeSceneDisplayView: class {
 protocol HomeSceneBusinessLogic: class {
     var worker: HomeWorkerType { get }
     var presenter: HomeScenePresentationLogic { get }
-    
+
     func fetchCharacters()
 }
 
 protocol HomeScenePresentationLogic: class {
     var displayView: HomeSceneDisplayView? { get }
-    
+
     func presentCharacters(_ response: HomeScene.Search.Response)
 }
 
