@@ -9,12 +9,13 @@
 import Foundation
 
 class HomeSceneInteractor: HomeSceneDataStore {
-    
+    // MARK: Stored Propirties
     let worker: HomeWorkerType
     let presenter: HomeScenePresentationLogic
-    
     var result: Characters.Search.Results?
-    
+    var isLayoutChanged = true
+
+    // MARK: Life cycle
     init(worker: HomeWorkerType, presenter: HomeScenePresentationLogic) {
         self.worker = worker
         self.presenter = presenter
@@ -22,6 +23,15 @@ class HomeSceneInteractor: HomeSceneDataStore {
 }
 
 extension HomeSceneInteractor: HomeSceneBusinessLogic {
+    func changeLayoutButtonTapped() {
+        isLayoutChanged.toggle()
+        if isLayoutChanged {
+            presenter.displayHorizontalLayout()
+        } else {
+            presenter.displayVerticalLayout()
+        }
+    }
+    
     
     func fetchCharacters() {
         
