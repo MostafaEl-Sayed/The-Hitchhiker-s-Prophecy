@@ -15,6 +15,7 @@ final class CharacterDetailsScenePresenter {
     // MARK: - Init
     init(displayView: CharacterDetailsSceneDisplayLogic) {
         self.displayView = displayView
+        
     }
 }
 

@@ -39,6 +39,16 @@
                ReferencedContainer = "container:The Hitchhiker Prophecy.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "81C0980D26D37C5800260C25"
+               BuildableName = "The Hitchhiker ProphecyUITests.xctest"
+               BlueprintName = "The Hitchhiker ProphecyUITests"
+               ReferencedContainer = "container:The Hitchhiker Prophecy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
