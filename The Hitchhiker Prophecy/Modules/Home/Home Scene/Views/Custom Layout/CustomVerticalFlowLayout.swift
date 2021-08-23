@@ -42,6 +42,7 @@ class CustomVerticalFlowLayout:  UICollectionViewFlowLayout {
             let itemAttributesCopy = itemAttributes.copy() as! UICollectionViewLayoutAttributes
             attributesCopy.append(itemAttributesCopy)
         }
+        
         return attributesCopy
     }
 
