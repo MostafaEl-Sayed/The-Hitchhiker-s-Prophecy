@@ -44,6 +44,9 @@
 		811C8CBE26D342AD00C9FEFC /* HomeCharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7AE4E249803460053EF25 /* HomeCharacterCollectionViewCell.xib */; };
 		811C8CD126D3466200C9FEFC /* CustomHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C8CD026D3466200C9FEFC /* CustomHorizontalFlowLayout.swift */; };
 		811C8CDF26D3543800C9FEFC /* CustomVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C8CDE26D3543800C9FEFC /* CustomVerticalFlowLayout.swift */; };
+		81C097EC26D3644300260C25 /* HomeScenePresneterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C097EB26D3644300260C25 /* HomeScenePresneterTests.swift */; };
+		81C097F226D36C1D00260C25 /* HomeSceneDisplayViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C097F126D36C1D00260C25 /* HomeSceneDisplayViewSpy.swift */; };
+		81C097F726D3708400260C25 /* SearchResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C097F626D3708400260C25 /* SearchResponseMock.swift */; };
 		A9F01E9524E1ED350034ABB9 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F01E9424E1ED350034ABB9 /* ThemeManager.swift */; };
 		A9F01E9724E1ED9B0034ABB9 /* AppLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F01E9624E1ED9B0034ABB9 /* AppLibraryManager.swift */; };
 		A9F01E9924E1EE560034ABB9 /* AppWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F01E9824E1EE560034ABB9 /* AppWindowManager.swift */; };
@@ -104,6 +107,9 @@
 		811C8CB326D333BC00C9FEFC /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		811C8CD026D3466200C9FEFC /* CustomHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		811C8CDE26D3543800C9FEFC /* CustomVerticalFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVerticalFlowLayout.swift; sourceTree = "<group>"; };
+		81C097EB26D3644300260C25 /* HomeScenePresneterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScenePresneterTests.swift; sourceTree = "<group>"; };
+		81C097F126D36C1D00260C25 /* HomeSceneDisplayViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneDisplayViewSpy.swift; sourceTree = "<group>"; };
+		81C097F626D3708400260C25 /* SearchResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseMock.swift; sourceTree = "<group>"; };
 		A9F01E9424E1ED350034ABB9 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		A9F01E9624E1ED9B0034ABB9 /* AppLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLibraryManager.swift; sourceTree = "<group>"; };
 		A9F01E9824E1EE560034ABB9 /* AppWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowManager.swift; sourceTree = "<group>"; };
@@ -236,6 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				01D65F7924913A160082F8FF /* The_Hitchhiker_ProphecyTests.swift */,
+				81C097FF26D378E000260C25 /* Presenters */,
+				81C097FC26D378D400260C25 /* Views Spy */,
+				81C097F526D3705400260C25 /* Models  */,
 				01D65F7B24913A160082F8FF /* Info.plist */,
 			);
 			path = "The Hitchhiker ProphecyTests";
@@ -326,6 +335,30 @@
 				811C8CB326D333BC00C9FEFC /* NSObject.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		81C097F526D3705400260C25 /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+				81C097F626D3708400260C25 /* SearchResponseMock.swift */,
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		81C097FC26D378D400260C25 /* Views Spy */ = {
+			isa = PBXGroup;
+			children = (
+				81C097F126D36C1D00260C25 /* HomeSceneDisplayViewSpy.swift */,
+			);
+			path = "Views Spy";
+			sourceTree = "<group>";
+		};
+		81C097FF26D378E000260C25 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				81C097EB26D3644300260C25 /* HomeScenePresneterTests.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		A9F01E9324E1ED270034ABB9 /* Managers */ = {
@@ -578,6 +611,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C097F226D36C1D00260C25 /* HomeSceneDisplayViewSpy.swift in Sources */,
+				81C097EC26D3644300260C25 /* HomeScenePresneterTests.swift in Sources */,
+				81C097F726D3708400260C25 /* SearchResponseMock.swift in Sources */,
 				01D65F7A24913A160082F8FF /* The_Hitchhiker_ProphecyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,7 +762,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6267355CA;
 				INFOPLIST_FILE = "The Hitchhiker Prophecy/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -746,7 +782,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6267355CA;
 				INFOPLIST_FILE = "The Hitchhiker Prophecy/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
