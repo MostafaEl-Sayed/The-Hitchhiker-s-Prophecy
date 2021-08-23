@@ -50,7 +50,6 @@ class CustomHorizontalFlowLayout:  UICollectionViewFlowLayout {
     }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        print(proposedContentOffset)
         let layoutAttributes = self.layoutAttributesForElements(in: collectionView!.bounds)
 
         let collectionViewXCenter = collectionView!.bounds.size.width / 2
