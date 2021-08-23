@@ -32,10 +32,10 @@ class HomeSceneViewController: UIViewController {
     }
     private func setupCollectionView() {
         let layout =  CustomHorizontalFlowLayout()
-//        layout.delegate = nil
         collectionView.collectionViewLayout = layout
-        let puppyCell = UINib(nibName: "HomeCharacterCollectionViewCell", bundle: nil)
-        collectionView.register(puppyCell, forCellWithReuseIdentifier: "HomeCharacterCollectionViewCell")
+        let identifier = HomeCharacterCollectionViewCell.className
+        let characterCell = UINib(nibName: identifier, bundle: nil)
+        collectionView.register(characterCell, forCellWithReuseIdentifier: identifier)
         
     }
     
@@ -45,9 +45,9 @@ extension HomeSceneViewController: HomeSceneDisplayView {
     func didFetchCharacters(viewModel: [HomeScene.Search.ViewModel]) {
         // TODO: Implement
         self.viewModel = viewModel
-        let layout = UICollectionViewFlowLayout()
-        collectionView.collectionViewLayout.invalidateLayout()
-        collectionView.setCollectionViewLayout(layout, animated: true)
+//        let layout = UICollectionViewFlowLayout()
+//        collectionView.collectionViewLayout.invalidateLayout()
+//        collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.reloadData()
     }
     
@@ -67,7 +67,7 @@ extension HomeSceneViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCharacterCollectionViewCell", for: indexPath) as? HomeCharacterCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCharacterCollectionViewCell.className, for: indexPath) as? HomeCharacterCollectionViewCell else {
             return UICollectionViewCell()
         }
         let row = indexPath.row
