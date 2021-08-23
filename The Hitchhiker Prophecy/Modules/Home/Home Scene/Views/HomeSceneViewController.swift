@@ -31,9 +31,8 @@ class HomeSceneViewController: UIViewController {
         setupCollectionView()
     }
     private func setupCollectionView() {
-        let layout =  CustomHorizontalFlowLayout()
+        let layout = CustomHorizontalFlowLayout()
         collectionView.collectionViewLayout = layout
-        collectionView.delegate = nil
         let identifier = HomeCharacterCollectionViewCell.className
         let characterCell = UINib(nibName: identifier, bundle: nil)
         collectionView.register(characterCell, forCellWithReuseIdentifier: identifier)
@@ -96,9 +95,11 @@ extension HomeSceneViewController: UICollectionViewDataSource {
         
         return cell
     }
+}
 
+// MARK: - UICollectionViewDelegate
+extension HomeSceneViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         router?.routeToCharacterDetailsWithCharacter(at: indexPath.row)
     }
 }
-

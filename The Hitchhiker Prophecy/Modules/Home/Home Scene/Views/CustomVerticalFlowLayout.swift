@@ -34,6 +34,17 @@ class CustomVerticalFlowLayout:  UICollectionViewFlowLayout {
         self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
     }
 
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let attributes = super.layoutAttributesForElements(in: rect)
+        var attributesCopy = [UICollectionViewLayoutAttributes]()
+
+        for itemAttributes in attributes! {
+            let itemAttributesCopy = itemAttributes.copy() as! UICollectionViewLayoutAttributes
+            attributesCopy.append(itemAttributesCopy)
+        }
+        return attributesCopy
+    }
+
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
